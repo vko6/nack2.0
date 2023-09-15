@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.offer{
+    background-color: rgb(154, 178, 132);
+    color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.homeBanner{
+    width: 1519px;
+    overflow: hidden;
+}
+
+.homeBanner .slides .element{
+    float: left;
+    width: 1820px;
+    /* background-color: aquamarine; */
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.homeBanner .slides {
+    width: calc(1820px*4);
+    animation: slideshow 40s infinite;
+}
+@keyframes slideshow {
+    20% {margin-left: 0px;}
+    40% {margin-left: calc(-1820px * 1);}
+    60% {margin-left: calc(-1820px * 2);}
+}
+.imgText{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.readmore{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+}
+
+.navbar{
+    display: flex;
+    z-index: 1;
+    position:fixed;
+    /* background-color: rgb(253, 255, 240); */
+    padding: 10px 0;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1rem;
+    
+    /* justify-content: space-between; */
+
+}
+
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* scrolling colors */
+    background-color: black;
+    color: white;
+  }
+.navbar .navEle{
+    margin: 10px;
+    
+}
+
+main#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+  }
+  
+  div.item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: coral;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+      translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+  }
+  
+  div.item:nth-of-type(1) {
+    --offset: 1;
+    background-color: #90f1ef;
+  }
+  div.item:nth-of-type(2) {
+    --offset: 2;
+    background-color: #ff70a6;
+  }
+  div.item:nth-of-type(3) {
+    --offset: 3;
+    background-color: #ff9770;
+  }
+  div.item:nth-of-type(4) {
+    --offset: 4;
+    background-color: #ffd670;
+  }
+  div.item:nth-of-type(5) {
+    --offset: 5;
+    background-color: #e9ff70;
+  }
+  
+  input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(1):checked ~ main#carousel {
+    --position: 1;
+  }
+  
+  input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(2):checked ~ main#carousel {
+    --position: 2;
+  }
+  
+  input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(3):checked ~ main#carousel {
+    --position: 3;
+  }
+  
+  input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(4):checked ~ main#carousel {
+    --position: 4;
+  }
+  
+  input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(5):checked ~ main#carousel {
+    --position: 5;
+  }
+
+  .container{
+    margin: 5% 14%;
+    height: 90vh ;
+    width: 70vw;
+    /* background-color: #59aa12; */
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .leftSection{
+    width: 50%;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .data{
+    width: 25rem;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    
+
+    /* border: solid 2px black; */
+  }
+  .dataContainer{
+    /* border: solid 2px black; */
+    
+    padding: 1rem;
+  }
+
+  .healthContainer{
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 5rem;
+    background-color: rgb(249, 223, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .insideHC{
+    
+    width: 60%;
+    height: 100%;
+    /* border: solid 2px black; */
+    display: flex;
+    justify-content: space-between;
+
+  }
+ .footer{
+    width: 100vw;
+    height: 5rem;
+    background-color: black;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    padding: 20px;
+ }
